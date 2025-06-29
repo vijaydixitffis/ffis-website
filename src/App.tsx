@@ -348,7 +348,7 @@ function App() {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <img 
-                src="/ffis-website/FFIS-logo-new.png" 
+                src="./FFIS-logo-new.png" 
                 alt="Future Focus IT Solutions" 
                 className="h-16 w-auto"
               />
@@ -968,7 +968,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <img 
-                src="/ffis-website/FFIS-logo-new.png" 
+                src="./FFIS-logo-new.png" 
                 alt="Future Focus IT Solutions" 
                 className="h-16 w-auto mb-4 brightness-0 invert"
               />
