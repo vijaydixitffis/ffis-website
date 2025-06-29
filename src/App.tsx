@@ -307,10 +307,10 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Assessment Widget Overlay */}
       {showAssessmentWidget && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] flex flex-col">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-[95vw] h-[95vh] flex flex-col">
             {/* Widget Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => setShowAssessmentWidget(false)}
