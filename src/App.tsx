@@ -61,6 +61,19 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scrolling when assessment widget is open
+  useEffect(() => {
+    if (showAssessmentWidget) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showAssessmentWidget]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -331,13 +344,17 @@ function App() {
             </div>
             
             {/* Widget Content */}
-            <div className="flex-1 overflow-auto assessment-widget-scroll">
+            <div className="flex-1 overflow-y-auto assessment-widget-scroll" style={{ maxHeight: 'calc(95vh - 120px)' }}>
               <iframe
                 src="https://vijaydixitffis.github.io/ffis-modern/"
-                className="w-full h-full border-0"
+                className="w-full border-0"
                 title="AI Readiness and Application Modernity Assessments"
-                style={{ minHeight: '100%' }}
-                scrolling="auto"
+                style={{ 
+                  minHeight: '100%',
+                  height: '100vh',
+                  maxHeight: 'none'
+                }}
+                scrolling="no"
                 frameBorder="0"
                 allowFullScreen
               />
