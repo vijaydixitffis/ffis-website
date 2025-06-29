@@ -452,33 +452,33 @@ function App() {
             </div>
             <div className="lg:pl-12">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow h-32">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
                     <Brain className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">AI Enablement Expertise</h3>
-                  <p className="text-xs text-gray-600">Generative AI & ML solutions</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">AI Enablement Expertise</h3>
+                  <p className="text-sm text-gray-600">Generative AI & ML solutions</p>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-8 h-32">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-8">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Cloud className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">Industry and Cloud Certified</h3>
-                  <p className="text-xs text-gray-600">Enterprise architecture experts and cloud specialists</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">Industry and Cloud Certified</h3>
+                  <p className="text-sm text-gray-600">Enterprise architecture experts and cloud specialists</p>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow -mt-4 h-32">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow -mt-4">
                   <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
                     <TrendingUp className="w-6 h-6 text-teal-600" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">50+ Projects</h3>
-                  <p className="text-xs text-gray-600">Successful digital transformations</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">50+ Projects</h3>
+                  <p className="text-sm text-gray-600">Successful digital transformations</p>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-4 h-32">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow mt-4">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                     <Users className="w-6 h-6 text-orange-600" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">500+ Capacity</h3>
-                  <p className="text-xs text-gray-600">Offshore technology partners</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">500+ Capacity</h3>
+                  <p className="text-sm text-gray-600">Offshore technology partners</p>
                 </div>
               </div>
 
