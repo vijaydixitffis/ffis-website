@@ -419,7 +419,7 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="pt-20 min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-6">
@@ -490,7 +490,7 @@ function App() {
                       <BarChart3 className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg">Free Assessments</h3>
+                      <h3 className="font-bold text-lg">Know your AI Readiness or Modernity Index</h3>
                       <p className="text-indigo-100 text-sm">Evaluate your digital readiness</p>
                     </div>
                   </div>
