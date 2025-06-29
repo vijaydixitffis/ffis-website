@@ -33,12 +33,15 @@ import {
   Settings,
   BarChart3,
   Rocket,
-  Brain
+  Brain,
+  ExternalLink,
+  ChevronLeft
 } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [showAssessmentWidget, setShowAssessmentWidget] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -302,8 +305,45 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Assessment Widget Overlay */}
+      {showAssessmentWidget && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] flex flex-col">
+            {/* Widget Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => setShowAssessmentWidget(false)}
+                  className="flex items-center text-gray-600 hover:text-teal-600 transition-colors"
+                >
+                  <ChevronLeft className="w-5 h-5 mr-1" />
+                  Back to Website
+                </button>
+                <div className="h-6 w-px bg-gray-300"></div>
+                <h2 className="text-xl font-bold text-gray-900">AI Readiness & Application Modernity Assessments</h2>
+              </div>
+              <button
+                onClick={() => setShowAssessmentWidget(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            {/* Widget Content */}
+            <div className="flex-1 overflow-hidden">
+              <iframe
+                src="https://vijaydixitffis.github.io/ffis-modern/"
+                className="w-full h-full border-0"
+                title="AI Readiness and Application Modernity Assessments"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
@@ -439,6 +479,31 @@ function App() {
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">500+ Capacity</h3>
                   <p className="text-sm text-gray-600">Offshore technology partners</p>
+                </div>
+              </div>
+
+              {/* Assessment Card */}
+              <div className="mt-8">
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-white">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                      <BarChart3 className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg">Free Assessments</h3>
+                      <p className="text-indigo-100 text-sm">Evaluate your digital readiness</p>
+                    </div>
+                  </div>
+                  <p className="text-indigo-100 mb-4 text-sm">
+                    Take our comprehensive AI Readiness and Application Modernity assessments to understand your current state and transformation opportunities.
+                  </p>
+                  <button
+                    onClick={() => setShowAssessmentWidget(true)}
+                    className="w-full bg-white text-indigo-600 px-4 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors flex items-center justify-center group"
+                  >
+                    Start Assessment
+                    <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </div>
             </div>
