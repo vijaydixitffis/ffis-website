@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom scrollbar styling for assessment widget */
+.assessment-widget-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.assessment-widget-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.assessment-widget-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.assessment-widget-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

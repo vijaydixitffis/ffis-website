@@ -331,11 +331,15 @@ function App() {
             </div>
             
             {/* Widget Content */}
-            <div className="flex-1 overflow-hidden">
+            <div className="flex-1 overflow-auto assessment-widget-scroll">
               <iframe
                 src="https://vijaydixitffis.github.io/ffis-modern/"
                 className="w-full h-full border-0"
                 title="AI Readiness and Application Modernity Assessments"
+                style={{ minHeight: '100%' }}
+                scrolling="auto"
+                frameBorder="0"
+                allowFullScreen
               />
             </div>
           </div>
