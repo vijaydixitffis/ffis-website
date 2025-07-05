@@ -452,6 +452,10 @@ function App() {
                 Driving Business 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600"> Outcomes</span>
               </h1>
+              <div className="mb-4">
+                <h2 className="text-2xl font-semibold text-teal-600">Future Focus IT Solutions</h2>
+                <p className="text-lg text-gray-600">Your Trusted Technology Partner</p>
+              </div>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Transform your business with cutting-edge technology solutions. From AI-enabled innovations to cloud transformations, we deliver results across US, UK, Europe and South Africa.
               </p>
