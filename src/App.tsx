@@ -998,6 +998,11 @@ function App() {
                 className="h-16 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-gray-400 mb-4">Driving business outcomes through innovative technology solutions for 25+ years.</p>
+              <div className="text-sm text-gray-400 mb-4">
+                <p><strong>Address:</strong> Future Focus IT Solutions, Pune, Maharashtra, India</p>
+                <p><strong>Contact:</strong> +91-8275421793</p>
+                <p><strong>Email:</strong> info@futurefocusit.solutions</p>
+              </div>
               <div className="text-sm text-gray-400">
                 <p>Global Presence:</p>
                 <p>US | UK | Europe | South Africa</p>
