@@ -38,6 +38,116 @@ import {
   ChevronLeft
 } from 'lucide-react';
 
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSexr4FmEtkYwFYhKtU9HUKBMZmaVmaWg-uAIEKSUXCf3O5PoQ/formResponse';
+
+function ContactForm() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    setTimeout(() => setSubmitted(true), 500);
+  };
+
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 text-center">
+        <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-6">
+          <CheckCircle className="w-8 h-8 text-teal-600" />
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-3">Thank You!</h3>
+        <p className="text-gray-600 mb-6">We've received your message and will be in touch shortly.</p>
+        <button
+          onClick={() => setSubmitted(false)}
+          className="px-6 py-2 text-teal-600 border border-teal-600 rounded-lg hover:bg-teal-50 transition-colors"
+        >
+          Send Another Message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      action={GOOGLE_FORM_ACTION}
+      method="POST"
+      target="hidden_iframe"
+      onSubmit={handleSubmit}
+      className="space-y-6"
+    >
+      <div className="grid md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+          <input
+            type="text"
+            name="entry.1459196966"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+            placeholder="John"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+          <input
+            type="text"
+            name="entry.2025950698"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+            placeholder="Smith"
+          />
+        </div>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+        <input
+          type="email"
+          name="entry.84368181"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+          placeholder="john@company.com"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
+        <input
+          type="text"
+          name="entry.788386903"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+          placeholder="Your Company"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Industry Domain</label>
+        <select
+          name="entry.1002249930"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+        >
+          <option value="">Select Industry</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Banking & Financial Services">Banking &amp; Financial Services</option>
+          <option value="Retail & Manufacturing">Retail &amp; Manufacturing</option>
+          <option value="Logistics & Utilities">Logistics &amp; Utilities</option>
+          <option value="Telecoms">Telecoms</option>
+          <option value="Healthcare & Government">Healthcare &amp; Government</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Project Requirements *</label>
+        <textarea
+          name="entry.1640249924"
+          required
+          rows={4}
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+          placeholder="Tell us about your digital transformation needs, technology requirements, or specific challenges..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
+      >
+        Request Consultation
+      </button>
+    </form>
+  );
+}
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -919,69 +1029,8 @@ function App() {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                  <input 
-                    type="email" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="john@company.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="Your Company"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Industry Domain</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors">
-                    <option>Select Industry</option>
-                    <option>Insurance</option>
-                    <option>Banking & Financial Services</option>
-                    <option>Retail & Manufacturing</option>
-                    <option>Logistics & Utilities</option>
-                    <option>Telecoms</option>
-                    <option>Healthcare & Government</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Requirements</label>
-                  <textarea 
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
-                    placeholder="Tell us about your digital transformation needs, technology requirements, or specific challenges..."
-                  ></textarea>
-                </div>
-                <button 
-                  type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200"
-                >
-                  Request Consultation
-                </button>
-              </form>
+              <iframe name="hidden_iframe" style={{display:'none'}} title="hidden_iframe"></iframe>
+              <ContactForm />
             </div>
           </div>
         </div>
